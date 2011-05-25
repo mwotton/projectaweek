@@ -1,4 +1,6 @@
 Railstemplate::Application.routes.draw do
+  resources :rounds
+
   resources :hackers
 
   # The priority is based upon order of creation:
