@@ -1,4 +1,8 @@
 Railstemplate::Application.routes.draw do
+  resources :round1s
+
+  resources :foos
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
