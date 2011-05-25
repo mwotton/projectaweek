@@ -1,1 +1,1 @@
-rake
+bundle exec rspec spec
