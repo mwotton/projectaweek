@@ -1,7 +1,7 @@
 class CreateHackers < ActiveRecord::Migration
   def self.up
     create_table :hackers do |t|
-      t.string :twitter
+      t.string :twitter, :null => false
 
       t.timestamps
     end

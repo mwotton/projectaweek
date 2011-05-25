@@ -1,9 +1,9 @@
 class CreateEntries < ActiveRecord::Migration
   def self.up
     create_table :entries do |t|
-      t.text :link
-      t.Hacker :references
-      t.Round :references
+      t.text :link, :null => false
+      t.Hacker :references, :null => false
+      t.Round :references, :null => false
 
       t.timestamps
     end
