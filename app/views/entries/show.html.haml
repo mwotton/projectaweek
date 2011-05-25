@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Link:
+  = @entry.link
+%p
+  %b References:
+  = @entry.references
+%p
+  %b References:
+  = @entry.references
+
+= link_to 'Edit', edit_entry_path(@entry)
+\|
+= link_to 'Back', entries_path

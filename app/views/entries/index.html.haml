@@ -1,0 +1,23 @@
+%h1 Listing entries
+
+%table
+  %tr
+    %th Link
+    %th References
+    %th References
+    %th
+    %th
+    %th
+
+  - @entries.each do |entry|
+    %tr
+      %td= entry.link
+      %td= entry.references
+      %td= entry.references
+      %td= link_to 'Show', entry
+      %td= link_to 'Edit', edit_entry_path(entry)
+      %td= link_to 'Destroy', entry, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Entry', new_entry_path

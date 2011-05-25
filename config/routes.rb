@@ -1,4 +1,6 @@
 Railstemplate::Application.routes.draw do
+  resources :entries
+
   resources :rounds
 
   resources :hackers
