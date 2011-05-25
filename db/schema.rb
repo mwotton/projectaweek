@@ -10,19 +10,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110525023656) do
+ActiveRecord::Schema.define(:version => 20110525063947) do
 
   create_table "entries", :force => true do |t|
-    t.integer  "round_id",   :null => false
+    t.text     "link",       :null => false
     t.integer  "hacker_id",  :null => false
-    t.string   "link",       :null => false
-    t.string   "shortname",  :null => false
+    t.integer  "round_id",   :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "hackers", :force => true do |t|
-    t.text     "twitter",    :null => false
+    t.string   "twitter",    :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
