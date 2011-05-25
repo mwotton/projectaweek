@@ -1,0 +1,13 @@
+= form_for @hacker do |f|
+  -if @hacker.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@hacker.errors.count, "error")} prohibited this hacker from being saved:"
+      %ul
+        - @hacker.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :twitter
+    = f.text_field :twitter
+  .actions
+    = f.submit 'Save'

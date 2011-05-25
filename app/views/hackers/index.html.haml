@@ -1,0 +1,19 @@
+%h1 Listing hackers
+
+%table
+  %tr
+    %th Twitter
+    %th
+    %th
+    %th
+
+  - @hackers.each do |hacker|
+    %tr
+      %td= hacker.twitter
+      %td= link_to 'Show', hacker
+      %td= link_to 'Edit', edit_hacker_path(hacker)
+      %td= link_to 'Destroy', hacker, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Hacker', new_hacker_path
