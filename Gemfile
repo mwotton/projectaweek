@@ -3,6 +3,7 @@ source 'http://rubygems.org'
 gem 'rails', '3.0.4'
 
 gem 'haml'
+gem 'haml-rails'
 gem 'sass'
 gem 'pg'
 gem 'sqlite3'
