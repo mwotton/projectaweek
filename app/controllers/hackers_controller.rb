@@ -1,4 +1,6 @@
 class HackersController < ApplicationController
+
+  
   # GET /hackers
   # GET /hackers.xml
   def index

@@ -1,4 +1,7 @@
 class EntriesController < ApplicationController
+  # autocomplete :hacker, :twitter
+  #  autocomplete :round, :deadline
+
   # GET /entries
   # GET /entries.xml
   def index
@@ -40,6 +43,7 @@ class EntriesController < ApplicationController
   # POST /entries
   # POST /entries.xml
   def create
+    puts params[:entry]
     @entry = Entry.new(params[:entry])
 
     respond_to do |format|
@@ -80,4 +84,19 @@ class EntriesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def scoreboard
+    #    topHackers = params[:to_show] || 10
+    @hackers = Hacker.includes(:entries).order("entries_count desc")
+    @rounds = Round.all.select {|x| x.entries != [] }
+    
+    @entries = {}
+    @hackers.each do |h|
+      @entries[h.id]={}
+      h.entries.each do |e|
+        @entries[h.id][e.round.id] = e
+      end
+    end
+  end
+  
 end

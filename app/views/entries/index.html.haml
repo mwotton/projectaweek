@@ -3,8 +3,8 @@
 %table
   %tr
     %th Link
-    %th References
-    %th References
+    %th Hacker
+    %th Entry
     %th
     %th
     %th
@@ -12,8 +12,8 @@
   - @entries.each do |entry|
     %tr
       %td= entry.link
-      %td= entry.references
-      %td= entry.references
+      %td= entry.hacker.twitter
+      %td= entry.round.deadline
       %td= link_to 'Show', entry
       %td= link_to 'Edit', edit_entry_path(entry)
       %td= link_to 'Destroy', entry, :confirm => 'Are you sure?', :method => :delete

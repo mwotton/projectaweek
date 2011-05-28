@@ -20,8 +20,11 @@ ActiveRecord::Schema.define(:version => 20110525063947) do
     t.datetime "updated_at"
   end
 
+  add_index "entries", ["hacker_id", "round_id"], :name => "index_entries_on_hacker_id_and_round_id", :unique => true
+
   create_table "hackers", :force => true do |t|
-    t.string   "twitter",    :null => false
+    t.string   "twitter",                      :null => false
+    t.integer  "entries_count", :default => 0, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

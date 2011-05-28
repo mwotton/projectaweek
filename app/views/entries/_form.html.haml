@@ -6,14 +6,15 @@
         - @entry.errors.full_messages.each do |msg|
           %li= msg
 
+          
+  .field
+    = f.label :hacker
+    = collection_select :entry, :hacker_id, Hacker.all, :id, :twitter
+  .field
+    = f.label :round
+    = collection_select :entry, :round_id, Round.all, :id, :deadline 
   .field
     = f.label :link
-    = f.text_area :link
-  .field
-    = f.label :references
-    = f.text_field :references
-  .field
-    = f.label :references
-    = f.text_field :references
+    = f.text_field :link
   .actions
     = f.submit 'Save'

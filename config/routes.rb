@@ -1,6 +1,10 @@
 Railstemplate::Application.routes.draw do
-  resources :entries
+  resources :entries do
+    get :autocomplete_hacker_twitter, :on => :collection
+    get :autocomplete_round_deadline, :on => :collection
 
+  end
+  match 'scoreboard' => 'entries#scoreboard'
   resources :rounds
 
   resources :hackers

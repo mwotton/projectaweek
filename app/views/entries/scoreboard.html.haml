@@ -1,0 +1,17 @@
+%table{:cellpadding => 5}
+  %tr
+    %th name
+    %th score
+    - @rounds.each do |r|
+      %th= r.deadline.to_date
+  - @hackers.each do |hacker|
+    %tr 
+      %td= link_to hacker.twitter, "http://slashdot.org"
+      %td= hacker.entries_count
+      - @rounds.each do |round|
+        - entry=@entries[hacker.id][round.id]
+        - if entry 
+          %td{:bgcolor => "lightgreen"}= link_to entry.link, entry.link
+          - else
+          %td{:bgcolor => "grey"}
+            %center :(  
