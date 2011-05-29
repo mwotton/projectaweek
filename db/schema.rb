@@ -10,23 +10,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110525063947) do
+ActiveRecord::Schema.define(:version => 20110528114323) do
 
   create_table "entries", :force => true do |t|
-    t.text     "link",       :null => false
-    t.integer  "hacker_id",  :null => false
-    t.integer  "round_id",   :null => false
+    t.text     "link",                            :null => false
+    t.integer  "hacker_id",                       :null => false
+    t.integer  "round_id",                        :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "shortname",  :default => "FIXME", :null => false
   end
 
   add_index "entries", ["hacker_id", "round_id"], :name => "index_entries_on_hacker_id_and_round_id", :unique => true
 
   create_table "hackers", :force => true do |t|
-    t.string   "twitter",                      :null => false
-    t.integer  "entries_count", :default => 0, :null => false
+    t.string   "twitter",                                         :null => false
+    t.integer  "entries_count", :default => 0,                    :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "homepage",      :default => "http://haskell.org", :null => false
   end
 
   create_table "rounds", :force => true do |t|

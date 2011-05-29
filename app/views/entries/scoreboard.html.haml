@@ -1,7 +1,9 @@
-%table{:cellpadding => 5}
+%h1 Project-A-Week Scoreboard Of DOOM
+
+%table{:cellpadding => 5, :width => "100%"}
   %tr
-    %th name
-    %th score
+    %th{:width => '20px'}  name
+    %th{:width => '20px'}  score
     - @rounds.each do |r|
       %th= r.deadline.to_date
   - @hackers.each do |hacker|
@@ -15,3 +17,10 @@
           - else
           %td{:bgcolor => "grey"}
             %center :(  
+
+if you'd like to play along at home,
+= link_to "make yourself an account", :action => :new, :controller =>:hackers
+and 
+= link_to "start submitting entries", :action => :new, :controller =>:entries
+
+There is precisely no security on this at the moment, so try to resist the urge to prank.
