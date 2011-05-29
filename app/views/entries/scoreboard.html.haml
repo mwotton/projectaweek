@@ -1,3 +1,4 @@
+
 %h1 Project-A-Week Scoreboard Of DOOM
 
 %table{:cellpadding => 5, :width => "100%"}
@@ -8,8 +9,8 @@
       %th= r.deadline.to_date
   - @hackers.each do |hacker|
     %tr 
-      %td= link_to hacker.twitter, "http://slashdot.org"
-      %td= hacker.entries_count
+      %td{:width => '20px'}= link_to hacker.twitter, "http://slashdot.org"
+      %td{:width => '20px'}= hacker.entries_count
       - @rounds.each do |round|
         - entry=@entries[hacker.id][round.id]
         - if entry 
