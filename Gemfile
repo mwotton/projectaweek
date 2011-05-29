@@ -18,9 +18,10 @@ gem 'css3buttons', '~> 0.9.2'
 # gem 'goalie', '~> 0.0.4'
 # gem 'rainbow', '~> 1.1.1'
 # gem 'chronic', '~> 0.3.0'
+gem 'awesome_print', '~> 0.4.0'
 
 group :development, :test do
-  gem 'awesome_print', '~> 0.4.0'
+
   gem 'looksee', '~> 1.0.2'
   gem 'rbtrace', '~> 0.3.13'
   gem 'ruby-debug19', '~> 0.11.6', :require => 'ruby-debug'
