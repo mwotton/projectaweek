@@ -1,0 +1,8 @@
+This is a coordination site for the #projectaweek movement.
+
+Things to think about:
+
+  - do we want to model starting projects as well, or just finishing
+    them?
+  - oauth with twitter (plus authorisation etc)
+  - included twitter search for #projectaweek in js?
