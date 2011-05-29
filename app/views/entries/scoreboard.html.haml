@@ -13,7 +13,7 @@
       - @rounds.each do |round|
         - entry=@entries[hacker.id][round.id]
         - if entry 
-          %td{:bgcolor => "lightgreen"}= link_to entry.link, entry.link
+          %td{:bgcolor => "lightgreen"}= link_to entry.shortname, entry.link
           - else
           %td{:bgcolor => "grey"}
             %center :(  
