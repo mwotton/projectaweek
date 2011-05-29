@@ -9,6 +9,6 @@ ProjectAWeek::Application.routes.draw do
   resources :hackers
 
   root :to => "entries#scoreboard"
-  match '/auth/:provider/callback', :to => 'sessions#create'
+#   match '/auth/:provider/callback', :to => 'sessions#create'
 
 end
