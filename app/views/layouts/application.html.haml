@@ -1,4 +1,42 @@
 %html
   %head
     %title Project-A-Week - hack it fast and dirty
-  %body= yield
+  %body
+    #main= yield
+
+    <script src="http://widgets.twimg.com/j/2/widget.js"></script>
+
+    #twitter
+      :javascript 
+        new TWTR.Widget({
+        version: 2,
+        type: 'search',
+        search: '#projectaweek',
+        interval: 6000,
+        title: 'one project, one week',
+        subject: '',
+        width: 300,
+        height: 800,
+        theme: {
+        shell: {
+        background: '#8ec1da',
+        color: '#ffffff'
+        },
+        tweets: {
+        background: '#ffffff',
+        color: '#444444',
+        links: '#1985b5'
+        }
+        },
+        features: {
+        scrollbar: false,
+        loop: true,
+        live: true,
+        hashtags: true,
+        timestamp: true,
+        avatars: true,
+        toptweets: true,
+        behavior: 'default'
+        }
+        }).render().start();
+
