@@ -12,7 +12,7 @@
     = collection_select :entry, :hacker_id, Hacker.all, :id, :twitter
   .field
     = f.label :round
-    = collection_select :entry, :round_id, Round.all, :id, :deadline 
+    = collection_select :entry, :round_id, Round.open_rounds, :id, :deadline 
   .field
     = f.label :link
     = f.text_field :link

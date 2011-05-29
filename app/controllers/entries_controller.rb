@@ -43,11 +43,11 @@ class EntriesController < ApplicationController
   # POST /entries
   # POST /entries.xml
   def create
-    require_login
-    puts params[:entry]
-    params[:entry][:hacker] = current_hacker
+    # require_login
+    # puts params[:entry]
+    # params[:entry][:hacker] = current_hacker
     @entry = Entry.new(params[:entry])
-
+    
     respond_to do |format|
       if @entry.save
         format.html { redirect_to(@entry, :notice => 'Entry was successfully created.') }
@@ -90,7 +90,8 @@ class EntriesController < ApplicationController
   def scoreboard
     #    topHackers = params[:to_show] || 10
     @hackers = Hacker.includes(:entries).order("entries_count desc")
-    @rounds = Round.where("deadline < ?", 1.week.from_now).order(:deadline)
+    @rounds = Round.open_rounds
+
     
     @entries = {}
     @hackers.each do |h|
