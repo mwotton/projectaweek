@@ -1,0 +1,31 @@
+package_assets:         on
+embed_assets:           on
+compress_assets:        on
+gzip_assets:            on
+template_function:      _.template
+package_path:           assets
+javascript_compressor:  closure
+
+javascripts:
+  libraries:
+    - public/javascripts/libraries/*.js
+  plugins:
+    - public/javascripts/plugins/*.js
+  extras:
+    - public/javascripts/plugins/*/*.js
+  layout:
+    - public/javascripts/views/layouts/*.js
+  production:
+    - public/javascripts/libraries/*.js
+    - public/javascripts/plugins/*.js
+    - public/javascripts/plugins/**/*.js
+    - public/javascripts/views/layouts/*.js
+
+stylesheets:
+  layout:
+    - public/stylesheets/compiled/layouts/application.css
+  plugins:
+    - public/stylesheets/compiled/plugins/*.css
+  production:
+    - public/stylesheets/compiled/plugins/*.css
+    - public/stylesheets/compiled/layouts/application.css
