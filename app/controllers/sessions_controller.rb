@@ -1,10 +1,8 @@
 class SessionsController < ApplicationController
   def create
     Rails.logger.warn "in create"
-    auth = request.env['rack.auth']
-    omniauth = request.env['omniauth.auth']
+    auth = request.env['omniauth.auth']
     Rails.logger.warn(auth.inspect)
-    Rails.logger.warn(omniauth.inspect)
     Rails.logger.warn(params.inspect)
     
     self.current_hacker = Hacker.find_or_create_from_hash(auth)
