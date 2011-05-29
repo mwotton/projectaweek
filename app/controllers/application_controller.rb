@@ -9,6 +9,11 @@ class ApplicationController < ActionController::Base
     !!current_hacker
   end
 
+  def require_login
+    if !signed_in?
+      redirect_to '/auth/twitter'
+    end
+  end
   helper_method :current_hacker, :signed_in?
 
   def current_hacker=(hacker)

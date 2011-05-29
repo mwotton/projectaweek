@@ -58,6 +58,7 @@ class HackersController < ApplicationController
   # PUT /hackers/1
   # PUT /hackers/1.xml
   def update
+    
     @hacker = Hacker.find(params[:id])
 
     respond_to do |format|
