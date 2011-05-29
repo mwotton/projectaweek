@@ -4,7 +4,14 @@ class SessionsController < ApplicationController
     auth = request.env['omniauth.auth']
     Rails.logger.warn(auth.inspect)
     Rails.logger.warn(params.inspect)
-    h = Hacker.find_or_create_from_hash(auth)
+    h=nil
+    begin
+      h = Hacker.find_or_create_from_hash(auth)
+    rescue => e
+      Rails.logger.warn "Caught #{e.inspect}"
+      raise e
+    end
+    
     Rails.logger.warn("Hacker is #{h.inspect}")
     self.current_hacker = h
 
