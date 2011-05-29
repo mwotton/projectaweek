@@ -43,8 +43,10 @@ class EntriesController < ApplicationController
   # POST /entries
   # POST /entries.xml
   def create
-    # require_login
+    require_login
     # puts params[:entry]
+    ap params[:entry]
+    ap current_hacker
     # params[:entry][:hacker] = current_hacker
     @entry = Entry.new(params[:entry])
     

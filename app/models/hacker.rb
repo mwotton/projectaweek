@@ -14,8 +14,7 @@ class Hacker < ActiveRecord::Base
 
   def self.create_from_hash(hash)
     ap hash
-    create! hash.merge(:twitter => hash['uid'],
-                       :name => hash['user_info']['name'])
+    create! :twitter => hash['uid'],:name => hash['user_info']['name']
     
   end
 end
