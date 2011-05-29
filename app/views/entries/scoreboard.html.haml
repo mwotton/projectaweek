@@ -2,8 +2,8 @@
 
 %table{:cellpadding => 5, :width => "100%"}
   %tr
-    %th{:width => '20px'}  name
-    %th{:width => '20px'}  score
+    %th{:width => '20px',:bgcolor => 'grey'}  name
+    %th{:width => '20px', :bgcolor => 'grey'}  score
     - @rounds.each do |r|
       %th= r.deadline.to_date
   - @hackers.each do |hacker|
