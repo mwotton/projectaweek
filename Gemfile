@@ -4,6 +4,7 @@ gem 'rails', '3.0.4'
 gem 'jquery-rails', '>= 1.0.3'
 gem 'rails3-jquery-autocomplete'
 
+gem 'omniauth'
 gem 'awesome_print'
 gem 'haml'
 gem 'haml-rails'

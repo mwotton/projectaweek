@@ -7,5 +7,6 @@ Railstemplate::Application.routes.draw do
   resources :rounds
   resources :hackers
   root :to => "entries#scoreboard"
+  match '/auth/twitter/callback', :to => 'sessions#create'
 
 end
