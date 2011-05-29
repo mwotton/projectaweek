@@ -9,12 +9,12 @@ class Hacker < ActiveRecord::Base
   end
   
   def self.find_from_hash(hash)
-    find_by_twitter(hash['uid'])
+    find_by_twitter(hash['user_info']['nickname'])
   end
 
   def self.create_from_hash(hash)
     ap hash
-    create! :twitter => hash['uid'],:name => hash['user_info']['name']
+    create! :twitter => hash['user_info']['nickname'],:name => hash['user_info']['name']
     
   end
 end
