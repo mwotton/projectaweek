@@ -88,7 +88,7 @@ class EntriesController < ApplicationController
   def scoreboard
     #    topHackers = params[:to_show] || 10
     @hackers = Hacker.includes(:entries).order("entries_count desc")
-    @rounds = Round.where("deadline < ?", Time.now).order(:deadline)
+    @rounds = Round.where("deadline < ?", 1.week.from_now).order(:deadline)
     
     @entries = {}
     @hackers.each do |h|
