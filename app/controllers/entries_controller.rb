@@ -43,10 +43,11 @@ class EntriesController < ApplicationController
   # POST /entries
   # POST /entries.xml
   def create
-    require_login
+
+    # require_login
     # puts params[:entry]
-    ap params[:entry]
-    ap current_hacker
+    # ap params[:entry]
+    #ap current_hacker
     # params[:entry][:hacker] = current_hacker
     @entry = Entry.new(params[:entry])
     
@@ -92,6 +93,7 @@ class EntriesController < ApplicationController
   def scoreboard
     #    topHackers = params[:to_show] || 10
     @hackers = Hacker.includes(:entries).order("entries_count desc")
+    # fixme take last n? 6,7?
     @rounds = Round.open_rounds
 
     
