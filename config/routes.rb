@@ -4,7 +4,7 @@ Railstemplate::Application.routes.draw do
     get :autocomplete_round_deadline, :on => :collection
 
   end
-  match 'scoreboard' => 'entries#scoreboard'
+  match '/' => 'entries#scoreboard'
   resources :rounds
 
   resources :hackers
