@@ -50,7 +50,7 @@ class EntriesController < ApplicationController
     #ap current_hacker
     # params[:entry][:hacker] = current_hacker
     @entry = Entry.new(params[:entry])
-    
+
     respond_to do |format|
       if @entry.save
         format.html { redirect_to(@entry, :notice => 'Entry was successfully created.') }
@@ -92,11 +92,12 @@ class EntriesController < ApplicationController
 
   def scoreboard
     #    topHackers = params[:to_show] || 10
-    @hackers = Hacker.includes(:entries).order("entries_count desc")
+    @hackers = Hacker.includes(:entries).where("entries_count > 0").order("entries_count desc")
+    @sidelined = Hacker.where(:entries_count == 0)
     # fixme take last n? 6,7?
     @rounds = Round.open_rounds
 
-    
+
     @entries = {}
     @hackers.each do |h|
       @entries[h.id]={}
@@ -105,5 +106,5 @@ class EntriesController < ApplicationController
       end
     end
   end
-  
+
 end
