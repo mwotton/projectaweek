@@ -13,9 +13,9 @@
     - @hackers.each_with_index do |hacker,index|
       - even_odd = 0
       - if (index %2 ==0) then
-        - even_odd = "even"
-      - else
         - even_odd = "odd"
+      - else
+        - even_odd = "even"
       %tr{:class => even_odd}
         %td{:class => "scoreboard_hacker"}= link_to hacker.twitter, "http://slashdot.org"
         %td{:class => "scoreboard_score"}= hacker.entries_count
