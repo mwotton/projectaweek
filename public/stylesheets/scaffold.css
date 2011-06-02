@@ -100,7 +100,7 @@ textarea { overflow: auto; }
 ******** */
 
 body {
-  margin: 0 1em 1em 5em;
+  margin: 0 1em 1em 3em;
 }
 h1 {
   font: 4em/1em 'Cabin Sketch', sans-serif;
@@ -109,8 +109,7 @@ h1 {
 
 #main {
   margin: 0 2em 2em 0;
-  min-width: 50%;
-  max-width: 65em;
+  max-width: 70em;
 }
 #main,
 #twitter {
@@ -169,10 +168,9 @@ h1 {
   background: #eee;
 }
 .scoreboard_achievement_t1 {
-  border-left: 1px dashed #aaa;
+  border-left: 1px solid #aaa;
 }
 .scoreboard_achievement_t0 {
-  border-left: 1px solid red;
   text-align: center;
 }
 
