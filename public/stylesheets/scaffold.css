@@ -64,7 +64,7 @@ input, select { vertical-align:middle; }
 /* ********
 * PRESET CSS
 ******** */
-body { font:13px/1.231 Ubuntu, sans-serif; *font-size:small; } /* hack retained to preserve specificity */
+body { font:13px/1.462 Ubuntu, sans-serif; *font-size:small; } /* hack retained to preserve specificity */
 select, input, textarea, button { font:99% sans-serif; }
 pre, code, kbd, samp { font-family: monospace, sans-serif; }
 body, select, input, textarea { color: #444; }
@@ -133,7 +133,7 @@ h1 {
 }
 
 .scoreboard {
-  margin-bottom: 1em;
+  margin-bottom: 2em;
   width: 100%;
 }
 .scoreboard th,
@@ -143,6 +143,9 @@ h1 {
 .scoreboard_header_t1 {
   border-bottom: 1px solid;
   border-right: 1px solid;
+}
+.scoreboard_header_t3 {
+  border-right: none;
 }
 .scoreboard_header_name {
   width: 10em;
@@ -156,19 +159,31 @@ h1 {
 }
 .scoreboard_achievement_t1 {
 }
-/*
+.even {
+  background: #eee;
+}
+.odd .scoreboard_achievement_t1 {
+  border-left: 1px solid #eee;
+}
+.scoreboard_achievement_t0,
+.odd .scoreboard_achievement_t0 {
+  border-left: 1px solid red;
+  text-align: center;
+}
+
 pre {
   background-color: #eee;
   padding: 10px;
   font-size: 11px;
 }
 
-a { color: #000; }
-a:visited { color: #666; }
-a:hover { color: #fff; background-color:#000; }
-
-div.field, div.actions {
+.field,
+.actions {
   margin-bottom: 10px;
+}
+.field label {
+  width: 8em;
+  display: inline-block;
 }
 
 #notice {
@@ -205,4 +220,3 @@ div.field, div.actions {
   font-size: 12px;
   list-style: square;
 }
-*/
