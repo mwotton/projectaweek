@@ -14,42 +14,7 @@
         %li.main_nav_list_item= link_to "entries", entries_path
         %li.main_nav_list_item= link_to "hackers", hackers_path
         %li.main_nav_list_item= link_to "history", page_path("history")
+        %li.main_nav_list_item= link_to "twitter", page_path("twitter")
 
     #main= yield
-
-    <script src="http://widgets.twimg.com/j/2/widget.js"></script>
-
-    #twitter
-      :javascript
-        new TWTR.Widget({
-        version: 2,
-        type: 'search',
-        search: '#projectaweek',
-        interval: 6000,
-        title: 'one project, one week',
-        subject: '',
-        width: '250',
-        height: 400,
-        theme: {
-        shell: {
-        background: 'orange',
-        color: '#ffffff'
-        },
-        tweets: {
-        background: '#ffffff',
-        color: '#444444',
-        links: '#1985b5'
-        }
-        },
-        features: {
-        scrollbar: true,
-        loop: false,
-        live: true,
-        hashtags: true,
-        timestamp: true,
-        avatars: true,
-        toptweets: true,
-        behavior: 'all'
-        }
-        }).render().start();
 

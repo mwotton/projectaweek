@@ -1,0 +1,36 @@
+<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+
+#twitter
+  :javascript
+    new TWTR.Widget({
+        version: 2,
+        type: 'search',
+        search: '#projectaweek',
+        interval: 6000,
+        title: 'one project, one week',
+        subject: '',
+        width: 'auto',
+        height: 400,
+        theme: {
+        shell: {
+        background: 'orange',
+        color: '#ffffff'
+        },
+        tweets: {
+        background: '#ffffff',
+        color: '#444444',
+        links: '#1985b5'
+        }
+        },
+        features: {
+        scrollbar: true,
+        loop: false,
+        live: true,
+        hashtags: true,
+        timestamp: true,
+        avatars: true,
+        toptweets: true,
+        behavior: 'all'
+        }
+        }).render().start();
+
