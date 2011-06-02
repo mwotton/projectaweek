@@ -2,7 +2,7 @@ source :rubygems
 
 gem 'rails', '~> 3.0.4'
 
-
+gem 'high_voltage'
 gem 'pg', '~> 0.11.0'
 gem 'sqlite3', '~> 1.3.3'
 gem 'bcrypt-ruby', '~> 2.1.4', :require => 'bcrypt'

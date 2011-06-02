@@ -8,16 +8,12 @@
   %body
     %nav.main_nav
       %ul.main_nav_list
-        %li.main_nav_list_item><
-          = link_to "scoreboard", :action => :index
-        %li.main_nav_list_item><
-          = link_to "new account", :action => :new, :controller =>:hackers
-        %li.main_nav_list_item><
-          = link_to "new entry", :action => :new, :controller =>:entries
-        %li.main_nav_list_item><
-          = link_to "entries", :action => :index, :controller =>:entries
-        %li.main_nav_list_item><
-          = link_to "hackers", :action => :index, :controller =>:hackers
+        %li.main_nav_list_item= link_to "scoreboard", :controller => "/entries", :action => "scoreboard"
+        %li.main_nav_list_item= link_to "new account", new_hacker_path
+        %li.main_nav_list_item= link_to "new entry", new_entry_path
+        %li.main_nav_list_item= link_to "entries", entries_path
+        %li.main_nav_list_item= link_to "hackers", hackers_path
+        %li.main_nav_list_item= link_to "history", page_path("history")
 
     #main= yield
 

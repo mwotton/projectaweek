@@ -93,6 +93,7 @@ GEM
       launchy (>= 0.3.2)
       rest-client (~> 1.6.1)
       term-ansicolor (~> 1.0.5)
+    high_voltage (0.9.4)
     i18n (0.5.0)
     jammit (0.6.3)
       yui-compressor (>= 0.9.3)
@@ -237,6 +238,7 @@ DEPENDENCIES
   haml (~> 3.1.1)
   haml-rails (~> 0.3.4)
   heroku (~> 2.1.4)
+  high_voltage
   jammit (~> 0.6.3)
   jquery-rails (~> 1.0.2)
   looksee (~> 1.0.2)
