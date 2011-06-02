@@ -11,26 +11,20 @@
   %tfoot
   %tbody
     - @hackers.each_with_index do |hacker,index|
-      - if (index %2 ==0) then 
-        %tr{:class => "odd"}
-          %td{:class => "scoreboard_hacker"}= link_to hacker.twitter, "http://slashdot.org"
-          %td{:class => "scoreboard_score"}= hacker.entries_count
-          - @rounds.each do |round|
-            - entry=@entries[hacker.id][round.id]
-            - if entry 
-              %td{:class => "scoreboard_achievement_t1"}= link_to entry.shortname, entry.link
-              - else
-              %td{:class => "scoreboard_achievement_t1 scoreboard_achievement_t0"} :( 
+      - even_odd = 0
+      - if (index %2 ==0) then
+        - even_odd = "even"
       - else
-        %tr{:class => "even"}
-          %td{:class => "scoreboard_hacker"}= link_to hacker.twitter, "http://slashdot.org"
-          %td{:class => "scoreboard_score"}= hacker.entries_count
-          - @rounds.each do |round|
-            - entry=@entries[hacker.id][round.id]
-            - if entry 
-              %td{:class => "scoreboard_achievement_t1"}= link_to entry.shortname, entry.link
-              - else
-              %td{:class => "scoreboard_achievement_t1 scoreboard_achievement_t0"} :(  
+        - even_odd = "odd"
+      %tr{:class => even_odd}
+        %td{:class => "scoreboard_hacker"}= link_to hacker.twitter, "http://slashdot.org"
+        %td{:class => "scoreboard_score"}= hacker.entries_count
+        - @rounds.each do |round|
+          - entry=@entries[hacker.id][round.id]
+          - if entry 
+            %td{:class => "scoreboard_achievement_t1"}= link_to entry.shortname, entry.link
+            - else
+            %td{:class => "scoreboard_achievement_t1 scoreboard_achievement_t0"} :(
 
 if you'd like to play along at home,
 = link_to "make yourself an account", :action => :new, :controller =>:hackers
