@@ -23,9 +23,9 @@
           - else
             %td.scoreboard_achievement_t1.scoreboard_achievement_t0 :(
 
-On the sidelines waiting to make an entry:
-%p= @sidelined.map{|x| link_to x.twitter, "http://slashdot.org"}.join(",")
-
+- unless @sidelined.empty?
+  %h3 On the bench with zero entries:
+  %p= raw @sidelined.map{|x| link_to x.twitter, "http://slashdot.org"}.join(",")
 
 %p
   if you'd like to play along at home,

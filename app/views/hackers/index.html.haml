@@ -10,13 +10,13 @@
 
   %tfoot
   %tbody
-  
+
     - @hackers.each_with_index do |hacker,index|
       %tr{:class => (index % 2 == 0) ? "odd" : "even"}
         %td= hacker.twitter
         %td= link_to 'Show', hacker
         %td= link_to 'Edit', edit_hacker_path(hacker)
-        %td= link_to 'Destroy', hacker, :confirm => 'Are you sure?', :method => :delete
+        %td= link_to('Destroy', hacker_path(hacker), :confirm => "sure?", :method => :delete)
 
 %br
 
