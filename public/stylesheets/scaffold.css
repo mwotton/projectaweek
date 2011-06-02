@@ -120,16 +120,20 @@ h1 {
 
 .main_nav_list_item {
   display: inline;
-  background: orange;
-  margin-right: .5em;
-  padding: .25em;
 }
 .main_nav_list_item a {
   color: white;
+  display: inline-block;
   text-decoration: none;
+  background: orange;
+  margin-right: .5em;
+  padding: .25em .5em;
+  border-top: .125em solid #444;
 }
 .main_nav_list_item a:hover {
-  color: #036;
+  //color: #036;
+  border-top: .125em solid orange;
+  background: #444;
 }
 
 .scoreboard {
@@ -155,18 +159,14 @@ h1 {
 }
 .scoreboard_score {
   text-align: center;
-  border-right: 1px solid;
-}
-.scoreboard_achievement_t1 {
 }
 .even {
   background: #eee;
 }
-.odd .scoreboard_achievement_t1 {
-  border-left: 1px solid #eee;
+.scoreboard_achievement_t1 {
+  border-left: 1px dashed #aaa;
 }
-.scoreboard_achievement_t0,
-.odd .scoreboard_achievement_t0 {
+.scoreboard_achievement_t0 {
   border-left: 1px solid red;
   text-align: center;
 }
