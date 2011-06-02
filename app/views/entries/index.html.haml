@@ -1,22 +1,31 @@
 %h1 Listing entries
 
-%table
-  %tr
-    %th Link
-    %th Hacker
-    %th Entry
-    %th
-    %th
-    %th
-
-  - @entries.each do |entry|
+%table{:class => "scoreboard"}
+  %thead
     %tr
-      %td= entry.link
-      %td= entry.hacker.twitter
-      %td= entry.round.deadline
-      %td= link_to 'Show', entry
-      %td= link_to 'Edit', edit_entry_path(entry)
-      %td= link_to 'Destroy', entry, :confirm => 'Are you sure?', :method => :delete
+      %th{:class => "scoreboard_header_t1"} Link
+      %th{:class => "scoreboard_header_t1"} Hacker
+      %th{:class => "scoreboard_header_t1"} Entry
+      %th{:class => "scoreboard_header_t1 scoreboard_header_t3"}
+      %th{:class => "scoreboard_header_t1 scoreboard_header_t3"}
+      %th{:class => "scoreboard_header_t1 scoreboard_header_t3"}
+
+  %tfoot
+  %tbody
+
+    - @entries.each_with_index do |entry, index|
+      - even_odd = 0
+      - if (index %2 ==0) then
+        - even_odd = "odd"
+      - else
+        - even_odd = "even"
+      %tr{:class => even_odd}
+        %td= entry.link
+        %td= entry.hacker.twitter
+        %td= entry.round.deadline
+        %td= link_to 'Show', entry
+        %td= link_to 'Edit', edit_entry_path(entry)
+        %td= link_to 'Destroy', entry, :confirm => 'Are you sure?', :method => :delete
 
 %br
 
