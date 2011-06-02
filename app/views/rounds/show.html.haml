@@ -1,8 +1,12 @@
+%h1 Deadline
+
 %p#notice= notice
 
-%p
-  %b Deadline:
-  = @round.deadline
+%ul.details
+  %li.details_item
+    %span.details_item_t1.details_item_t2 Deadline:
+    %span.details_item_t1
+      = @round.deadline
 
 = link_to 'Edit', edit_round_path(@round)
 \|

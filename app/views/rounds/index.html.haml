@@ -1,18 +1,27 @@
 %h1 Listing rounds
 
-%table
-  %tr
-    %th Deadline
-    %th
-    %th
-    %th
-
-  - @rounds.each do |round|
+%table.scoreboard
+  %thead
     %tr
-      %td= round.deadline
-      %td= link_to 'Show', round
-      %td= link_to 'Edit', edit_round_path(round)
-      %td= link_to 'Destroy', round, :confirm => 'Are you sure?', :method => :delete
+      %th.scoreboard_header_t1 Deadline
+      %th.scoreboard_header_t1.scoreboard_header_t3
+      %th.scoreboard_header_t1.scoreboard_header_t3
+      %th.scoreboard_header_t1.scoreboard_header_t3
+
+  %tfoot
+  %tbody
+  
+    - @rounds.each_with_index do |round,index|
+      - even_odd = 0
+      - if (index %2 ==0) then
+        - even_odd = "odd"
+      - else
+        - even_odd = "even"
+      %tr{:class => even_odd}
+        %td= round.deadline
+        %td= link_to 'Show', round
+        %td= link_to 'Edit', edit_round_path(round)
+        %td= link_to 'Destroy', round, :confirm => 'Are you sure?', :method => :delete
 
 %br
 
