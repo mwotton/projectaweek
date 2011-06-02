@@ -23,7 +23,7 @@ gem 'awesome_print', '~> 0.4.0'
 group :development, :test do
 
   gem 'looksee', '~> 1.0.2'
-  gem 'rbtrace', '~> 0.3.13'
+  #gem 'rbtrace', '~> 0.3.13'
   gem 'ruby-debug19', '~> 0.11.6', :require => 'ruby-debug'
   gem 'utility_belt', '~> 1.1.0'
   gem 'wirble', '~> 0.1.3'

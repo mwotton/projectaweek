@@ -92,7 +92,8 @@ class EntriesController < ApplicationController
 
   def scoreboard
     #    topHackers = params[:to_show] || 10
-    @hackers = Hacker.includes(:entries).order("entries_count desc")
+    @hackers = Hacker.includes(:entries).where('entries_count > 0').order("entries_count desc")
+    @stalled = Hacker.where('entries_count = 0').all
     # fixme take last n? 6,7?
     @rounds = Round.open_rounds
 
