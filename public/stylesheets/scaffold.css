@@ -172,6 +172,8 @@ h1 {
 }
 .scoreboard_achievement_t0 {
   text-align: center;
+  background: url("/images/failed.png") no-repeat scroll center 5px transparent;
+  text-indent: -999em;
 }
 
 .details {
