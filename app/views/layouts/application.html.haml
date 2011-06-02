@@ -6,17 +6,17 @@
     %link{:rel => "stylesheet", :href => "http://fonts.googleapis.com/css?family=Ubuntu|Cabin+Sketch:bold", :type => "text/css", :media => "screen, handheld"}
     %link{:rel => "stylesheet", :href => "/stylesheets/scaffold.css", :type => "text/css", :media => "all"}
   %body
-    %nav{:class => "main_nav"}
-      %ul{:class => "main_nav_list"}
-        %li{:class => "main_nav_list_item"}
+    %nav.main_nav
+      %ul.main_nav_list
+        %li.main_nav_list_item><
           = link_to "scoarboard", :action => :index
-        %li{:class => "main_nav_list_item"}
+        %li.main_nav_list_item><
           = link_to "new account", :action => :new, :controller =>:hackers
-        %li{:class => "main_nav_list_item"}
+        %li.main_nav_list_item><
           = link_to "new entrie", :action => :new, :controller =>:entries
-        %li{:class => "main_nav_list_item"}
+        %li.main_nav_list_item><
           = link_to "entries", :action => :index, :controller =>:entries
-        %li{:class => "main_nav_list_item"}
+        %li.main_nav_list_item><
           = link_to "hacker", :action => :index, :controller =>:hackers
     
     #main= yield
