@@ -1,23 +1,22 @@
 
 %h1 Project-A-Week Scoreboard Of DOOM
 
-%table{:cellpadding => 5, :width => "100%"}
+%table{:class => "scoreboard"}
   %tr
-    %th{:width => '20px',:bgcolor => 'grey'}  name
-    %th{:width => '20px', :bgcolor => 'grey'}  score
+    %th{:class => "scoreboard_header"}  name
+    %th{:class => "scoreboard_header"}  score
     - @rounds.each do |r|
       %th= r.deadline.to_date
   - @hackers.each do |hacker|
     %tr 
-      %td{:width => '20px'}= link_to hacker.twitter, "http://slashdot.org"
-      %td{:width => '20px'}= hacker.entries_count
+      %td{:class => "scoreboard_hacker"}= link_to hacker.twitter, "http://slashdot.org"
+      %td{:class => "scoreboard_score"}= hacker.entries_count
       - @rounds.each do |round|
         - entry=@entries[hacker.id][round.id]
         - if entry 
-          %td{:bgcolor => "lightgreen"}= link_to entry.shortname, entry.link
+          %td{:class => "scoreboard_achievement_t1"}= link_to entry.shortname, entry.link
           - else
-          %td{:bgcolor => "grey"}
-            %center :(  
+          %td{:class => "scoreboard_achievement_t0"} :(  
 
 if you'd like to play along at home,
 = link_to "make yourself an account", :action => :new, :controller =>:hackers
