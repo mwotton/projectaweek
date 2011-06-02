@@ -20,6 +20,8 @@
           - entry=@entries[hacker.id][round.id]
           - if entry
             %td.scoreboard_achievement_t1= link_to entry.shortname, entry.link
+          - elsif round == @rounds.last
+            %td.scoreboard_achievement_t1.scoreboard_achievement_t2 Not yet
           - else
             %td.scoreboard_achievement_t1.scoreboard_achievement_t0 :(
 
