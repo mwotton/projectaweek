@@ -1,5 +1,6 @@
 /* ********
 * RESET CSS
+* from 
 ******** */
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -42,9 +43,28 @@ input, select { vertical-align:middle; }
 ******** */
 
 /* ********
+* @font-face for offline use
+* uncomment to use
+* fonts must be installed on system
+******** *
+@font-face {
+     font-family: 'CabinSketch';
+     src: url('CabinSketch-Bold.woff') format('woff'),
+           url('CabinSketch-Bold.ttf') format('truetype');
+	}
+@font-face {
+     font-family: 'Ubuntu';
+     src: url('Ubuntu-Regular.woff') format('woff'),
+           url('Ubuntu-Regular.ttf') format('truetype');
+	}
+/* ********
+* END @font-face
+******** */
+
+/* ********
 * PRESET CSS
 ******** */
-body { font:13px/1.231 sans-serif; *font-size:small; } /* hack retained to preserve specificity */
+body { font:13px/1.231 Ubuntu, sans-serif; *font-size:small; } /* hack retained to preserve specificity */
 select, input, textarea, button { font:99% sans-serif; }
 pre, code, kbd, samp { font-family: monospace, sans-serif; }
 body, select, input, textarea { color: #444; }
@@ -73,14 +93,65 @@ textarea { overflow: auto; }
 * END PRESET CSS
 ******** */
 
-body { background-color: #fff; color: #333; }
-
-body, p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size:   13px;
-  line-height: 18px;
+body {
+  margin: 0 1em 1em 5em;
 }
 
+h1 {
+  font: 4em/1em 'Cabin Sketch', sans-serif;
+  margin-bottom: .5em;
+}
+
+#main {
+  margin: 0 2em 2em 0;
+  min-width: 50%;
+  max-width: 65em;
+}
+#main,
+#twitter {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.main_nav {
+  margin: 0 0 1.5em 0;
+  font-size: 1.5em;
+}
+
+.main_nav_list_item {
+  display: inline;
+  background: orange;
+  margin-right: .5em;
+  padding: .25em;
+}
+.main_nav_list_item a {
+  color: white;
+  text-decoration: none;
+}
+.main_nav_list_item a:hover {
+  color: #036;
+}
+
+.scoreboard {
+  margin-bottom: 1em;
+  width: 100%;
+}
+.scoreboard th,
+.scoreboard td {
+  padding: .5em;
+}
+.scoreboard_header_t1 {
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+  width: 15%;
+}
+.scoreboard_score {
+  text-align: center;
+}
+.scoreboard_achievement_t1 {
+  width: 35%;
+}
+/*
 pre {
   background-color: #eee;
   padding: 10px;
@@ -129,3 +200,4 @@ div.field, div.actions {
   font-size: 12px;
   list-style: square;
 }
+*/

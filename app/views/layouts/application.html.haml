@@ -1,7 +1,18 @@
+<!DOCTYPE html>
 %html
   %head
+    %meta{:"charset" => "utf-8"}
     %title Project-A-Week - hack it fast and dirty
+    %link{:rel => "stylesheet", :href => "http://fonts.googleapis.com/css?family=Ubuntu|Cabin+Sketch:bold", :type => "text/css", :media => "screen, handheld"}
+    %link{:rel => "stylesheet", :href => "/stylesheets/scaffold.css", :type => "text/css", :media => "all"}
   %body
+    %nav{:class => "main_nav"}
+      %ul{:class => "main_nav_list"}
+        %li{:class => "main_nav_list_item"}
+          = link_to "new account", :action => :new, :controller =>:hackers
+        %li{:class => "main_nav_list_item"}
+          = link_to "new entrie", :action => :new, :controller =>:entries
+    
     #main= yield
 
     <script src="http://widgets.twimg.com/j/2/widget.js"></script>
@@ -15,11 +26,11 @@
         interval: 6000,
         title: 'one project, one week',
         subject: '',
-        width: 'auto',
+        width: '250',
         height: 400,
         theme: {
         shell: {
-        background: '#8ec1da',
+        background: 'orange',
         color: '#ffffff'
         },
         tweets: {
@@ -29,7 +40,7 @@
         }
         },
         features: {
-        scrollbar: false,
+        scrollbar: true,
         loop: false,
         live: true,
         hashtags: true,
