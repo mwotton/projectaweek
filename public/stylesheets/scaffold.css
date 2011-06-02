@@ -89,7 +89,12 @@ pre { padding: 15px;
 }
 textarea { overflow: auto; }
 ::-moz-selection{ background: orange; color:#fff; text-shadow: none; }
-::selection { background: orange; color:#fff; text-shadow: none; } 
+::selection { background: orange; color:#fff; text-shadow: none; }
+/* ** helper */
+/* from j.mp/bestclearfix */
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; visibility: hidden; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
 /* ********
 * END PRESET CSS
 ******** */
@@ -97,7 +102,6 @@ textarea { overflow: auto; }
 body {
   margin: 0 1em 1em 5em;
 }
-
 h1 {
   font: 4em/1em 'Cabin Sketch', sans-serif;
   margin-bottom: .5em;
@@ -170,6 +174,21 @@ h1 {
 .scoreboard_achievement_t0 {
   border-left: 1px solid red;
   text-align: center;
+}
+
+.details {
+  list-style:none;
+  margin-left: 0;
+  margin-bottom: 2em;
+}
+.details_item_t1 {
+  font-size: 1.154em; /* = 15px */
+  display: inline-block;
+  padding-bottom: .5em;
+}
+.details_item_t2 {
+  font-weight: bold;
+  width: 5em;
 }
 
 pre {
