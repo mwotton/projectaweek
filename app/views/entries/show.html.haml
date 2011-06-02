@@ -1,14 +1,20 @@
+%h1 Single entry
+
 %p#notice= notice
 
-%p
-  %b Link:
-  = @entry.link
-%p
-  %b Hacker:
-  = @entry.hacker.twitter
-%p
-  %b Round:
-  = @entry.round.deadline
+%ul.details
+  %li.details_item
+    %span.details_item_t1.details_item_t2 Link:
+    %span.details_item_t1
+      = @entry.link
+  %li
+    %span.details_item_t1.details_item_t2 Hacker:
+    %span.details_item_t1
+      = @entry.hacker.twitter
+  %li
+    %span.details_item_t1.details_item_t2 Round:
+    %span.details_item_t1
+      = @entry.round.deadline
 
 = link_to 'Edit', edit_entry_path(@entry)
 \|

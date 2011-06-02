@@ -88,7 +88,13 @@ pre { padding: 15px;
   word-wrap: break-word; /* IE */
 }
 textarea { overflow: auto; }
-
+::-moz-selection{ background: orange; color:#fff; text-shadow: none; }
+::selection { background: orange; color:#fff; text-shadow: none; }
+/* ** helper */
+/* from j.mp/bestclearfix */
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; visibility: hidden; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
 /* ********
 * END PRESET CSS
 ******** */
@@ -96,7 +102,6 @@ textarea { overflow: auto; }
 body {
   margin: 0 1em 1em 5em;
 }
-
 h1 {
   font: 4em/1em 'Cabin Sketch', sans-serif;
   margin-bottom: .5em;
@@ -115,26 +120,30 @@ h1 {
 
 .main_nav {
   margin: 0 0 1.5em 0;
-  font-size: 1.5em;
+  font-size: 1.231em; /* = 16px */
 }
 
 .main_nav_list_item {
   display: inline;
-  background: orange;
-  margin-right: .5em;
-  padding: .25em;
 }
 .main_nav_list_item a {
   color: white;
+  display: inline-block;
   text-decoration: none;
+  background: orange;
+  margin-right: .5em;
+  padding: .25em .5em;
+  border-top: .125em solid #444;
 }
 .main_nav_list_item a:hover {
-  color: #036;
+  border-top: .125em solid orange;
+  background: #444;
 }
 
 .scoreboard {
   margin-bottom: 2em;
   width: 100%;
+  font-size: 1.154em; /* = 15px */
 }
 .scoreboard th,
 .scoreboard td {
@@ -148,27 +157,38 @@ h1 {
   border-right: none;
 }
 .scoreboard_header_name {
-  width: 10em;
+  width: 8em;
 }
 .scoreboard_header_score {
-  width: 5em;
+  width: 3em;
 }
 .scoreboard_score {
   text-align: center;
-  border-right: 1px solid;
-}
-.scoreboard_achievement_t1 {
 }
 .even {
   background: #eee;
 }
-.odd .scoreboard_achievement_t1 {
-  border-left: 1px solid #eee;
+.scoreboard_achievement_t1 {
+  border-left: 1px dashed #aaa;
 }
-.scoreboard_achievement_t0,
-.odd .scoreboard_achievement_t0 {
+.scoreboard_achievement_t0 {
   border-left: 1px solid red;
   text-align: center;
+}
+
+.details {
+  list-style:none;
+  margin-left: 0;
+  margin-bottom: 2em;
+}
+.details_item_t1 {
+  font-size: 1.154em; /* = 15px */
+  display: inline-block;
+  padding-bottom: .5em;
+}
+.details_item_t2 {
+  font-weight: bold;
+  width: 5em;
 }
 
 pre {
