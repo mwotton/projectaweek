@@ -143,13 +143,18 @@ h1 {
 .scoreboard_header_t1 {
   border-bottom: 1px solid;
   border-right: 1px solid;
-  width: 15%;
+}
+.scoreboard_header_name {
+  width: 10em;
+}
+.scoreboard_header_score {
+  width: 5em;
 }
 .scoreboard_score {
   text-align: center;
+  border-right: 1px solid;
 }
 .scoreboard_achievement_t1 {
-  width: 35%;
 }
 /*
 pre {
