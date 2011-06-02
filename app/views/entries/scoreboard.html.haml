@@ -11,27 +11,22 @@
   %tfoot
   %tbody
     - @hackers.each_with_index do |hacker,index|
-      - even_odd = 0
-      - if (index %2 ==0) then
-        - even_odd = "odd"
-      - else
-        - even_odd = "even"
-      %tr{:class => even_odd}
+      %tr{:class => (index % 2 == 0) ? "odd" : "even"}
         %td.scoreboard_hacker
           = link_to hacker.twitter, "http://slashdot.org"
         %td.scoreboard_score
           = hacker.entries_count
         - @rounds.each do |round|
           - entry=@entries[hacker.id][round.id]
-          - if entry 
-            %td.scoreboard_achievement_t1
-              = link_to entry.shortname, entry.link
-            - else
+          - if entry
+            %td.scoreboard_achievement_t1= link_to entry.shortname, entry.link
+          - else
             %td.scoreboard_achievement_t1.scoreboard_achievement_t0 :(
 
-if you'd like to play along at home,
-= link_to "make yourself an account", :action => :new, :controller =>:hackers
-and 
-= link_to "start submitting entries", :action => :new, :controller =>:entries
+%p
+  if you'd like to play along at home,
+  = link_to "make yourself an account", :action => :new, :controller =>:hackers
+  and
+  = link_to "start submitting entries.", :action => :new, :controller =>:entries
 
-There is precisely no security on this at the moment, so try to resist the urge to prank.
+%p There is precisely no security on this at the moment, so try to resist the urge to prank.
