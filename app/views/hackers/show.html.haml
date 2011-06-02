@@ -1,10 +1,16 @@
+%h1 Lonely hacker
+
 %p#notice= notice
 
-%p
-  %b Twitter:
-  = @hacker.twitter
-  %b Name:
-  = @hacker.name
+%ul.details
+  %li.details_item
+    %span.details_item_t1.details_item_t2 Twitter:
+    %span.details_item_t1
+      = @hacker.twitter
+  %li.details_item
+    %span.details_item_t1.details_item_t2 Name:
+    %span.details_item_t1
+      = @hacker.name
 
 = link_to 'Edit', edit_hacker_path(@hacker)
 \|

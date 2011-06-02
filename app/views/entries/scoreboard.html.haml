@@ -1,11 +1,11 @@
 
 %h1 Project-A-Week Scoreboard Of DOOM
 
-%table{:class => "scoreboard"}
+%table.scoreboard
   %thead
     %tr
-      %th{:class => "scoreboard_header_t1 scoreboard_header_name"}  name
-      %th{:class => "scoreboard_header_t1 scoreboard_header_score"}  score
+      %th.scoreboard_header_t1.scoreboard_header_name  name
+      %th.scoreboard_header_t1.scoreboard_header_score  score
       - @rounds.each do |r|
         %th{:class => "scoreboard_header_t1 scoreboard_header_t2 scoreboard_header_date"}= r.deadline.to_date
   %tfoot
@@ -17,14 +17,17 @@
       - else
         - even_odd = "even"
       %tr{:class => even_odd}
-        %td{:class => "scoreboard_hacker"}= link_to hacker.twitter, "http://slashdot.org"
-        %td{:class => "scoreboard_score"}= hacker.entries_count
+        %td.scoreboard_hacker
+          = link_to hacker.twitter, "http://slashdot.org"
+        %td.scoreboard_score
+          = hacker.entries_count
         - @rounds.each do |round|
           - entry=@entries[hacker.id][round.id]
           - if entry 
-            %td{:class => "scoreboard_achievement_t1"}= link_to entry.shortname, entry.link
+            %td.scoreboard_achievement_t1
+              = link_to entry.shortname, entry.link
             - else
-            %td{:class => "scoreboard_achievement_t1 scoreboard_achievement_t0"} :(
+            %td.scoreboard_achievement_t1.scoreboard_achievement_t0 :(
 
 if you'd like to play along at home,
 = link_to "make yourself an account", :action => :new, :controller =>:hackers
