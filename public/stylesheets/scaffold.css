@@ -73,6 +73,7 @@ html { overflow-y: scroll; }
 a:hover, a:active { outline: none; }
 a, a:active, a:visited { color: #607890; }
 a:hover { color: #036; }
+a:link { -webkit-tap-highlight-color: #FF5E99; } /*  j.mp/webkit-tap-highlight-color */
 ul, ol { margin-left: 1.8em; }
 ol { list-style-type: decimal; }
 nav ul, nav li { margin: 0; }
