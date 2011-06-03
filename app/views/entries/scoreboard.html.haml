@@ -20,8 +20,14 @@
           - entry=@entries[hacker.id][round.id]
           - if entry
             %td.scoreboard_achievement_t1= link_to entry.shortname, entry.link
+          - elsif round == @rounds.last
+            %td.scoreboard_achievement_t1.scoreboard_achievement_t2 Not yet
           - else
             %td.scoreboard_achievement_t1.scoreboard_achievement_t0 :(
+
+- unless @sidelined.empty?
+  %h3 On the bench with zero entries:
+  %p= raw @sidelined.map{|x| link_to x.twitter, "http://slashdot.org"}.join(",")
 
 %p
   if you'd like to play along at home,

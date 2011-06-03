@@ -1,6 +1,6 @@
 /* ********
 * RESET CSS
-* from 
+* from
 ******** */
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -11,7 +11,7 @@ b, i,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure, 
+article, aside, canvas, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section, summary,
 time, mark, audio, video {
   margin:0;
@@ -51,12 +51,12 @@ input, select { vertical-align:middle; }
      font-family: 'CabinSketch';
      src: url('CabinSketch-Bold.woff') format('woff'),
            url('CabinSketch-Bold.ttf') format('truetype');
-	}
+        }
 @font-face {
      font-family: 'Ubuntu';
      src: url('Ubuntu-Regular.woff') format('woff'),
            url('Ubuntu-Regular.ttf') format('truetype');
-	}
+        }
 /* ********
 * END @font-face
 ******** */
@@ -79,7 +79,7 @@ ol { list-style-type: decimal; }
 nav ul, nav li { margin: 0; }
 small { font-size: 85%; }
 strong, th { font-weight: bold; }
-td, td img { vertical-align: top; } 
+td, td img { vertical-align: top; }
 sub { vertical-align: sub; font-size: smaller; }
 sup { vertical-align: super; font-size: smaller; }
 pre { padding: 15px;
@@ -171,10 +171,14 @@ h1 {
 .scoreboard_achievement_t1 {
   border-left: 1px solid #aaa;
 }
+
 .scoreboard_achievement_t0 {
   text-align: center;
   background: url("/images/failed.png") no-repeat scroll center 5px transparent;
   text-indent: -999em;
+}
+
+.scoreboard_achievement_t2 {
 }
 
 .details {
