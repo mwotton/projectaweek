@@ -22,6 +22,6 @@
         %td= link_to 'Edit', edit_entry_path(entry)
         %td= link_to 'Destroy', entry, :confirm => 'Are you sure?', :method => :delete
 
-%br
-
-= link_to 'New Entry', new_entry_path
+%ul.sub_nav
+  %li.sub_nav_item
+    = link_to 'New Entry', new_entry_path
