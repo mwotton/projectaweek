@@ -118,7 +118,6 @@ h1 {
   border-radius: 3px;
 }
 
-
 .main_nav {
   margin: 0 0 1.5em 0;
   font-size: 1.231em; /* = 16px */
@@ -152,29 +151,30 @@ h1 {
   padding: 1em 1em 5em
 }
 
-.scoreboard {
+.main_content_table {
   margin-bottom: 3em;
   width: 100%;
   font-size: 1.154em; /* = 15px */
 }
-.scoreboard th,
-.scoreboard td {
+.score
+.main_content_table th,
+.main_content_table td {
   padding: .5em;
 }
-.scoreboard_header_t1 {
+.mct_header_t1 {
   border-bottom: 1px solid;
   border-right: 1px solid;
 }
-.scoreboard_header_t3 {
+.mct_header_t3 {
   border-right: none;
 }
-.scoreboard_header_name {
+.mct_header_name {
   width: 8em;
 }
-.scoreboard_header_score {
+.mct_header_score {
   width: 3em;
 }
-.scoreboard_score {
+.mct_score {
   text-align: center;
 }
 .even {
