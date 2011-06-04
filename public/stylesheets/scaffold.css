@@ -193,6 +193,18 @@ h1 {
 .scoreboard_achievement_t2 {
 }
 
+td.count_down_to_score {
+  font: 1.5em/1em 'Cabin Sketch',Ubuntu, sans-serif;
+  color: orange;
+  padding: 0;
+  border: 1px dashed;
+}
+.count_down_to_score .still_time {
+  width: 5.6em;
+  margin: 0 auto;
+  padding: .5em
+}
+
 .details {
   list-style:none;
   margin-left: 0;
