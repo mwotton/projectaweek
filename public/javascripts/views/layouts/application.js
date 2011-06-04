@@ -6,6 +6,6 @@ $(document).ready(function(){
       rand_color = Math.floor(Math.random()*colors.length),
       rand_radius = Math.floor(Math.random()*max_radius) + "px";
       
-  $("body").css("background-color", colors[rand_color]);
-  $(".main_nav, .main_content, .main_nav_list_item a").css("border-radius", rand_radius);
+  //$("body").css("background-color", colors[rand_color]);
+  //$(".main_nav, .main_content, .main_nav_list_item a").css("border-radius", rand_radius);
 });

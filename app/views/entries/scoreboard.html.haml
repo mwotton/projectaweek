@@ -8,11 +8,11 @@
       %tr
         %td{:colspan => "6"}
         %td#countDownToScore.count_down_to_score
-      %tr
+      %tr.scoreboard_header
         %th.mct_header_t1.scoreboard_header_name  name
         %th.mct_header_t1.scoreboard_header_score  score
         - @rounds.each do |r|
-          %th{:class => "scoreboard_header_t1 scoreboard_header_t2 scoreboard_header_date"}= r.deadline.to_date
+          %th.mct_header_t1.mct_header_t2.scoreboard_header_date= r.deadline.to_date
     %tfoot
     %tbody
       - @hackers.each_with_index do |hacker,index|
@@ -24,11 +24,11 @@
           - @rounds.each do |round|
             - entry=@entries[hacker.id][round.id]
             - if entry
-              %td.mct_header_t1= link_to entry.shortname, entry.link
+              %td.scoreboard_achievement_t1= link_to entry.shortname, entry.link
             - elsif round == @rounds.last
-              %td.mct_header_t1.mct_header_t2 Not yet
+              %td.scoreboard_achievement_t1.scoreboard_achievement_t2 Not yet
             - else
-              %td.mct_header_t1.mct_header_t0 :(
+              %td.scoreboard_achievement_t1.scoreboard_achievement_t0 :(
 
 - unless @sidelined.empty?
   %h3 On the bench with zero entries:
