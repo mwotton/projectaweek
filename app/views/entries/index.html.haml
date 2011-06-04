@@ -1,14 +1,14 @@
 %h1 Listing entries
 
-%table.scoreboard
+%table.main_content_table.scoreboard
   %thead
     %tr
-      %th.scoreboard_header_t1 Link
-      %th.scoreboard_header_t1 Hacker
-      %th.scoreboard_header_t1 Entry
-      %th.scoreboard_header_t1.scoreboard_header_t3
-      %th.scoreboard_header_t1.scoreboard_header_t3
-      %th.scoreboard_header_t1.scoreboard_header_t3
+      %th.mct_header_t1 Link
+      %th.mct_header_t1 Hacker
+      %th.mct_header_t1 Entry
+      %th.mct_header_t1.mct_header_t3
+      %th.mct_header_t1.mct_header_t3
+      %th.mct_header_t1.mct_header_t3
 
   %tfoot
   %tbody
@@ -22,6 +22,6 @@
         %td= link_to 'Edit', edit_entry_path(entry)
         %td= link_to 'Destroy', entry, :confirm => 'Are you sure?', :method => :delete
 
-%br
-
-= link_to 'New Entry', new_entry_path
+%ul.sub_nav
+  %li.sub_nav_item
+    = link_to 'New Entry', new_entry_path

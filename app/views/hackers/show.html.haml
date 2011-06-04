@@ -12,6 +12,9 @@
     %span.details_item_t1
       = @hacker.name
 
-= link_to 'Edit', edit_hacker_path(@hacker)
-\|
-= link_to 'Back', hackers_path
+%ul.sub_nav
+  %li.sub_nav_item
+    = link_to 'Edit', edit_hacker_path(@hacker)
+    \|
+  %li.sub_nav_item
+    = link_to 'Back', hackers_path

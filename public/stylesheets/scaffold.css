@@ -73,6 +73,7 @@ html { overflow-y: scroll; }
 a:hover, a:active { outline: none; }
 a, a:active, a:visited { color: #607890; }
 a:hover { color: #036; }
+a:link { -webkit-tap-highlight-color: #FF5E99; } /*  j.mp/webkit-tap-highlight-color */
 ul, ol { margin-left: 1.8em; }
 ol { list-style-type: decimal; }
 nav ul, nav li { margin: 0; }
@@ -95,34 +96,39 @@ textarea { overflow: auto; }
 .clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; visibility: hidden; }
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; }
+
 /* ********
 * END PRESET CSS
 ******** */
 
 body {
-  margin: 0 1em 1em 3em;
+  margin: 0 auto 1em;
+  padding: 0 2em;
+  width: 75em;
+  background: url('/images/haem_24.png') repeat #aaa; /* or 00ff99, 444, aaa, 9cff00, 005980, 00b4ff */
 }
 h1 {
   font: 4em/1em 'Cabin Sketch', sans-serif;
   margin-bottom: .5em;
 }
 
-#main {
-  margin: 0 2em 2em 0;
-  max-width: 70em;
-}
-#main,
-#twitter {
-  display: inline-block;
-  vertical-align: top;
+.main_nav,
+.main_nav_list_item a,
+.main_content {
+  border-radius: 3px;
 }
 
 .main_nav {
   margin: 0 0 1.5em 0;
   font-size: 1.231em; /* = 16px */
+  background: white;
+  padding: 0 .75em .75em;
 }
-
-.main_nav_list_item {
+.sub_nav {
+  margin: 0;
+}
+.main_nav_list_item,
+.sub_nav_item {
   display: inline;
 }
 .main_nav_list_item a {
@@ -139,29 +145,36 @@ h1 {
   background: #444;
 }
 
-.scoreboard {
-  margin-bottom: 2em;
+.main_content {
+  margin: 0 0 2em 0;
+  background: white;
+  padding: 1em 1em 5em
+}
+
+.main_content_table {
+  margin-bottom: 3em;
   width: 100%;
   font-size: 1.154em; /* = 15px */
 }
-.scoreboard th,
-.scoreboard td {
+.score
+.main_content_table th,
+.main_content_table td {
   padding: .5em;
 }
-.scoreboard_header_t1 {
+.mct_header_t1 {
   border-bottom: 1px solid;
   border-right: 1px solid;
 }
-.scoreboard_header_t3 {
+.mct_header_t3 {
   border-right: none;
 }
-.scoreboard_header_name {
+.mct_header_name {
   width: 8em;
 }
-.scoreboard_header_score {
+.mct_header_score {
   width: 3em;
 }
-.scoreboard_score {
+.mct_score {
   text-align: center;
 }
 .even {
@@ -178,6 +191,18 @@ h1 {
 }
 
 .scoreboard_achievement_t2 {
+}
+
+td.count_down_to_score {
+  font: 1.5em/1em 'Cabin Sketch',Ubuntu, sans-serif;
+  color: orange;
+  padding: 0;
+  border: 1px dashed;
+}
+.count_down_to_score .still_time {
+  width: 5.6em;
+  margin: 0 auto;
+  padding: .5em
 }
 
 .details {

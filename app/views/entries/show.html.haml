@@ -16,6 +16,9 @@
     %span.details_item_t1
       = @entry.round.deadline
 
-= link_to 'Edit', edit_entry_path(@entry)
-\|
-= link_to 'Back', entries_path
+%ul.sub_nav
+  %li.sub_nav_item
+    = link_to 'Edit', edit_entry_path(@entry)
+    \|
+  %li.sub_nav_item
+    = link_to 'Back', entries_path
