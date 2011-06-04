@@ -105,7 +105,7 @@ body {
   margin: 0 auto 1em;
   padding: 0 2em;
   width: 75em;
-  background: url('/images/haem_24.png') repeat #aaa; /* or 00ff99, 444, aaa, 9cff00, 005980, 00b4ff */
+  background: url('/images/haem_24.png') repeat #444; /* or 00ff99, 444, aaa, 9cff00, 005980, 00b4ff */
 }
 h1 {
   font: 4em/1em 'Cabin Sketch', sans-serif;
@@ -115,7 +115,8 @@ h1 {
 .main_nav,
 .main_nav_list_item a,
 .main_content {
-  border-radius: 3px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
 }
 
 .main_nav {
@@ -179,6 +180,9 @@ h1 {
 }
 .even {
   background: #eee;
+}
+.scoreboard_header {
+  background-color: orange;
 }
 .scoreboard_achievement_t1 {
   border-left: 1px solid #aaa;
