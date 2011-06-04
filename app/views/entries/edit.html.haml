@@ -2,6 +2,9 @@
 
 = render 'form'
 
-= link_to 'Show', @entry
-\|
-= link_to 'Back', entries_path
+%ul.sub_nav
+  %li.sub_nav_item
+    = link_to 'Show', @entry
+    \|
+  %li.sub_nav_item
+    = link_to 'Back', entries_path

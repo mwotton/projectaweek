@@ -8,6 +8,9 @@
     %span.details_item_t1
       = @round.deadline
 
-= link_to 'Edit', edit_round_path(@round)
-\|
-= link_to 'Back', rounds_path
+%ul.sub_nav
+  %li.sub_nav_item
+    = link_to 'Edit', edit_round_path(@round)
+    \|
+  %li.sub_nav_item
+    = link_to 'Back', rounds_path
