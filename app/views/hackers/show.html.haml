@@ -1,20 +1,22 @@
-%h1 Lonely hacker
+%article.main_content
+  %h1 Lonely hacker
+  
+  %p#notice= notice
+  
+  %ul.details
+    %li.details_item
+      %span.details_item_t1.details_item_t2 Twitter:
+      %span.details_item_t1
+        = @hacker.twitter
+    %li.details_item
+      %span.details_item_t1.details_item_t2 Name:
+      %span.details_item_t1
+        = @hacker.name
 
-%p#notice= notice
-
-%ul.details
-  %li.details_item
-    %span.details_item_t1.details_item_t2 Twitter:
-    %span.details_item_t1
-      = @hacker.twitter
-  %li.details_item
-    %span.details_item_t1.details_item_t2 Name:
-    %span.details_item_t1
-      = @hacker.name
-
-%ul.sub_nav
-  %li.sub_nav_item
-    = link_to 'Edit', edit_hacker_path(@hacker)
-    \|
-  %li.sub_nav_item
-    = link_to 'Back', hackers_path
+%footer.footer_content  
+  %ul.sub_nav
+    %li.sub_nav_item
+      = link_to 'Edit', edit_hacker_path(@hacker)
+      \|
+    %li.sub_nav_item
+      = link_to 'Back', hackers_path

@@ -1,10 +1,12 @@
-%h1 Editing round
+%article.main_content
+  %h1 Editing round
+  
+  = render 'form'
 
-= render 'form'
-
-%ul.sub_nav
-  %li.sub_nav_item
-    = link_to 'Show', @round
-    \|
-  %li.sub_nav_item
-    = link_to 'Back', rounds_path
+%footer.footer_content  
+  %ul.sub_nav
+    %li.sub_nav_item
+      = link_to 'Show', @round
+      \|
+    %li.sub_nav_item
+      = link_to 'Back', rounds_path

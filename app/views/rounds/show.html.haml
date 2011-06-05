@@ -1,16 +1,18 @@
-%h1 Deadline
+%article.main_content
+  %h1 Deadline
+  
+  %p#notice= notice
+  
+  %ul.details
+    %li.details_item
+      %span.details_item_t1.details_item_t2 Deadline:
+      %span.details_item_t1
+        = @round.deadline
 
-%p#notice= notice
-
-%ul.details
-  %li.details_item
-    %span.details_item_t1.details_item_t2 Deadline:
-    %span.details_item_t1
-      = @round.deadline
-
-%ul.sub_nav
-  %li.sub_nav_item
-    = link_to 'Edit', edit_round_path(@round)
-    \|
-  %li.sub_nav_item
-    = link_to 'Back', rounds_path
+%footer.footer_content  
+  %ul.sub_nav
+    %li.sub_nav_item
+      = link_to 'Edit', edit_round_path(@round)
+      \|
+    %li.sub_nav_item
+      = link_to 'Back', rounds_path

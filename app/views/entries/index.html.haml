@@ -1,27 +1,29 @@
-%h1 Listing entries
+%article.main_content
+  %h1 Listing entries
+  
+  %table.main_content_table.scoreboard
+    %thead
+      %tr
+        %th.mct_header_t1 Link
+        %th.mct_header_t1 Hacker
+        %th.mct_header_t1 Entry
+        %th.mct_header_t1.mct_header_t3
+        %th.mct_header_t1.mct_header_t3
+        %th.mct_header_t1.mct_header_t3
+  
+    %tfoot
+    %tbody
+  
+      - @entries.each_with_index do |entry, index|
+        %tr{:class => (index % 2 == 0) ? "odd" : "even"}
+          %td= entry.link
+          %td= entry.hacker.twitter
+          %td= entry.round.deadline
+          %td= link_to 'Show', entry
+          %td= link_to 'Edit', edit_entry_path(entry)
+          %td= link_to 'Destroy', entry, :confirm => 'Are you sure?', :method => :delete
 
-%table.main_content_table.scoreboard
-  %thead
-    %tr
-      %th.mct_header_t1 Link
-      %th.mct_header_t1 Hacker
-      %th.mct_header_t1 Entry
-      %th.mct_header_t1.mct_header_t3
-      %th.mct_header_t1.mct_header_t3
-      %th.mct_header_t1.mct_header_t3
-
-  %tfoot
-  %tbody
-
-    - @entries.each_with_index do |entry, index|
-      %tr{:class => (index % 2 == 0) ? "odd" : "even"}
-        %td= entry.link
-        %td= entry.hacker.twitter
-        %td= entry.round.deadline
-        %td= link_to 'Show', entry
-        %td= link_to 'Edit', edit_entry_path(entry)
-        %td= link_to 'Destroy', entry, :confirm => 'Are you sure?', :method => :delete
-
-%ul.sub_nav
-  %li.sub_nav_item
-    = link_to 'New Entry', new_entry_path
+%footer.footer_content  
+  %ul.sub_nav
+    %li.sub_nav_item
+      = link_to 'New Entry', new_entry_path
