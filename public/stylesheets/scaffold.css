@@ -111,14 +111,34 @@ h1 {
   font: 4em/1em 'Cabin Sketch', sans-serif;
   margin-bottom: .5em;
 }
+h2 {
+  font-size: 1.231em;
+  line-height: 1.7em;
+  margin-bottom: .5em;
+  border-bottom: 1px solid
+}
+p {
+  padding-bottom: 1em
+}
 
+.even {
+  background-color: rgba(255, 165, 0, .3);
+}
+
+/* **
+* all wrapper elements
+*/
 .main_nav,
 .main_nav_list_item a,
-.main_content {
+.main_content,
+.footer_content {
   -moz-border-radius: 6px;
   border-radius: 6px;
 }
 
+/* **
+* navigation elements
+*/
 .main_nav {
   margin: 0 0 1.5em 0;
   font-size: 1.231em; /* = 16px */
@@ -146,19 +166,25 @@ h1 {
   background: #444;
 }
 
-.main_content {
+/* **
+* content and wrapper elements
+*/
+.main_content,
+.footer_content {
   margin: 0 0 2em 0;
   background: white;
-  padding: 1em 1em 5em
+  padding: 1em 1em 2em;
 }
-
+.footer_content {
+  padding-bottom: 1em;
+}
 .main_content_table {
   margin-bottom: 3em;
   width: 100%;
   font-size: 1.154em; /* = 15px */
 }
-.score
-.main_content_table th,
+
+.main_content_table .mct_header_t1,
 .main_content_table td {
   padding: .5em;
 }
@@ -175,11 +201,12 @@ h1 {
 .mct_header_score {
   width: 3em;
 }
-.mct_score {
+
+/* **
+* scoreboard table
+*/
+.scoreboard_score {
   text-align: center;
-}
-.even {
-  background: #eee;
 }
 .scoreboard_header {
   background-color: orange;
@@ -193,22 +220,27 @@ h1 {
   background: url("/images/failed.png") no-repeat scroll center 5px transparent;
   text-indent: -999em;
 }
-
 .scoreboard_achievement_t2 {
 }
 
 td.count_down_to_score {
-  font: 1.5em/1em 'Cabin Sketch',Ubuntu, sans-serif;
+  font: 1.533em/1.5em Monofett, Ubuntu, sans-serif;
   color: orange;
   padding: 0;
   border: 1px dashed;
+  border-bottom: none;
 }
 .count_down_to_score .still_time {
-  width: 5.6em;
-  margin: 0 auto;
-  padding: .5em
+  text-align: center
+}
+.noscore_bench {
+  padding: .25em 0 1em;
 }
 
+.img_text_t1 {
+  float: left;
+  padding: 0 1em .5em 0;
+}
 .details {
   list-style:none;
   margin-left: 0;
