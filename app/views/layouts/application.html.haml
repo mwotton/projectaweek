@@ -27,10 +27,12 @@
     
     %script{:src => "/javascripts/plugins/jquery.countdown.min.js", :type => "text/javascript"}
     :javascript
-      $('#countDownToScore').countdown({
-        until: '5d', /* needs to be changed to %next_score_date */
-        compact: true, 
-        layout: '<div class="still_time">{dn} {dl} {hnn}{sep}{mnn}{sep}{snn}</div>', 
-        description: 'til ... <em>Mark!?</em>'
-      });
+      $('#countDownToScore')
+        .countdown({
+          until: '5d', /* needs to be changed to %next_score_date */
+          compact: true, 
+          layout: '<div class="still_time">{dn} {dl} {hnn}{sep}{mnn}{sep}{snn}</div>', 
+          description: 'til ... <em>Mark!?</em>'
+        })
+        .addClass('count_down_to_score');
 
