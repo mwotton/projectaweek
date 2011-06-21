@@ -1,23 +1,25 @@
-%h1 Listing rounds
-
-%table.main_content_table.scoreboard
-  %thead
-    %tr
-      %th.mct_header_t1 Deadline
-      %th.mct_header_t1.mct_header_t3
-      %th.mct_header_t1.mct_header_t3
-      %th.mct_header_t1.mct_header_t3
-
-  %tfoot
-  %tbody
+%article.main_content
+  %h1 Listing rounds
   
-    - @rounds.each_with_index do |round,index|
-      %tr{:class => (index % 2 == 0) ? "odd" : "even"}
-        %td= round.deadline
-        %td= link_to 'Show', round
-        %td= link_to 'Edit', edit_round_path(round)
-        %td= link_to 'Destroy', round, :confirm => 'Are you sure?', :method => :delete
+  %table.main_content_table.scoreboard
+    %thead
+      %tr
+        %th.mct_header_t1 Deadline
+        %th.mct_header_t1.mct_header_t3
+        %th.mct_header_t1.mct_header_t3
+        %th.mct_header_t1.mct_header_t3
+  
+    %tfoot
+    %tbody
+    
+      - @rounds.each_with_index do |round,index|
+        %tr{:class => (index % 2 == 0) ? "odd" : "even"}
+          %td= round.deadline
+          %td= link_to 'Show', round
+          %td= link_to 'Edit', edit_round_path(round)
+          %td= link_to 'Destroy', round, :confirm => 'Are you sure?', :method => :delete
 
-%ul.sub_nav
-  %li.sub_nav_item
-    = link_to 'New Round', new_round_path
+%footer.footer_content  
+  %ul.sub_nav
+    %li.sub_nav_item
+      = link_to 'New Round', new_round_path

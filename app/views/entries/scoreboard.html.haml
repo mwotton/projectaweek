@@ -1,43 +1,43 @@
+%article.main_content
+  %h1 Project-A-Week Scoreboard Of DOOM
+  .scoreboard_wrapper
+    //#countDownToScore.count_down_to_score
+    %table.main_content_table.scoreboard
+      %thead
+        %tr
+          %td{:colspan => "6"}
+          %td#countDownToScore.count_down_to_score
+        %tr.scoreboard_header
+          %th.mct_header_t1.scoreboard_header_name  name
+          %th.mct_header_t1.scoreboard_header_score  score
+          - @rounds.each do |r|
+            %th.mct_header_t1.mct_header_t2.scoreboard_header_date= r.deadline.to_date
+      %tfoot
+      %tbody
+        - @hackers.each_with_index do |hacker,index|
+          %tr{:class => (index % 2 == 0) ? "odd" : "even"}
+            %td.scoreboard_hacker
+              = link_to hacker.twitter, "http://slashdot.org"
+            %td.scoreboard_score
+              = hacker.entries_count
+            - @rounds.each do |round|
+              - entry=@entries[hacker.id][round.id]
+              - if entry
+                %td.scoreboard_achievement_t1= link_to entry.shortname, entry.link
+              - elsif round == @rounds.last
+                %td.scoreboard_achievement_t1.scoreboard_achievement_t2 Not yet
+              - else
+                %td.scoreboard_achievement_t1.scoreboard_achievement_t0 :(
+  
+  - unless @sidelined.empty?
+    %h2 On the bench with zero entries:
+    %p.noscore_bench= raw @sidelined.map{|x| link_to x.twitter, "http://slashdot.org"}.join(", ")
 
-%h1 Project-A-Week Scoreboard Of DOOM
-
-.scoreboard_wrapper
-  //#countDownToScore.count_down_to_score
-  %table.main_content_table.scoreboard
-    %thead
-      %tr
-        %td{:colspan => "6"}
-        %td#countDownToScore.count_down_to_score
-      %tr.scoreboard_header
-        %th.mct_header_t1.scoreboard_header_name  name
-        %th.mct_header_t1.scoreboard_header_score  score
-        - @rounds.each do |r|
-          %th.mct_header_t1.mct_header_t2.scoreboard_header_date= r.deadline.to_date
-    %tfoot
-    %tbody
-      - @hackers.each_with_index do |hacker,index|
-        %tr{:class => (index % 2 == 0) ? "odd" : "even"}
-          %td.scoreboard_hacker
-            = link_to hacker.twitter, "http://slashdot.org"
-          %td.scoreboard_score
-            = hacker.entries_count
-          - @rounds.each do |round|
-            - entry=@entries[hacker.id][round.id]
-            - if entry
-              %td.scoreboard_achievement_t1= link_to entry.shortname, entry.link
-            - elsif round == @rounds.last
-              %td.scoreboard_achievement_t1.scoreboard_achievement_t2 Not yet
-            - else
-              %td.scoreboard_achievement_t1.scoreboard_achievement_t0 :(
-
-- unless @sidelined.empty?
-  %h3 On the bench with zero entries:
-  %p= raw @sidelined.map{|x| link_to x.twitter, "http://slashdot.org"}.join(",")
-
-%p
-  if you'd like to play along at home,
-  = link_to "make yourself an account", :action => :new, :controller =>:hackers
-  and
-  = link_to "start submitting entries.", :action => :new, :controller =>:entries
-
-%p There is precisely no security on this at the moment, so try to resist the urge to prank.
+%footer.footer_content
+  %section
+    if you'd like to play along at home,
+    = link_to "make yourself an account", :action => :new, :controller =>:hackers
+    and
+    = link_to "start submitting entries.", :action => :new, :controller =>:entries
+    %br
+    There is precisely no security on this at the moment, so try to resist the urge to prank.

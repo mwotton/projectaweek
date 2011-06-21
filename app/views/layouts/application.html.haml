@@ -3,7 +3,7 @@
   %head
     %meta{:"charset" => "utf-8"}
     %title Project-A-Week - hack it fast and dirty
-    %link{:rel => "stylesheet", :href => "http://fonts.googleapis.com/css?family=Ubuntu|Cabin+Sketch:bold", :type => "text/css", :media => "screen, handheld"}
+    %link{:rel => "stylesheet", :href => "http://fonts.googleapis.com/css?family=Ubuntu|Cabin+Sketch:bold|Monofett", :type => "text/css", :media => "screen, handheld"}
     %link{:rel => "stylesheet", :href => "/stylesheets/scaffold.css", :type => "text/css", :media => "all"}
   %body
     %nav.main_nav
@@ -17,7 +17,7 @@
         %li.main_nav_list_item= link_to "twitter", page_path("twitter")
 
     %article.main_content= yield
-
+    
     // Grab Google CDN's jQuery. fall back to local if necessary
     %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.js", :type => "text/javascript"}
     :javascript

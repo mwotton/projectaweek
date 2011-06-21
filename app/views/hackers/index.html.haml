@@ -1,23 +1,25 @@
-%h1 Listing hackers
+%article.main_content
+  %h1 Listing hackers
+  
+  %table.main_content_table.scoreboard
+    %thead
+      %tr
+        %th.mct_header_t1 Twitter
+        %th.mct_header_t1.mct_header_t3
+        %th.mct_header_t1.mct_header_t3
+        %th.mct_header_t1.mct_header_t3
+  
+    %tfoot
+    %tbody
+  
+      - @hackers.each_with_index do |hacker,index|
+        %tr{:class => (index % 2 == 0) ? "odd" : "even"}
+          %td= hacker.twitter
+          %td= link_to 'Show', hacker
+          %td= link_to 'Edit', edit_hacker_path(hacker)
+          %td= link_to('Destroy', hacker_path(hacker), :confirm => "sure?", :method => :delete)
 
-%table.main_content_table.scoreboard
-  %thead
-    %tr
-      %th.mct_header_t1 Twitter
-      %th.mct_header_t1.mct_header_t3
-      %th.mct_header_t1.mct_header_t3
-      %th.mct_header_t1.mct_header_t3
-
-  %tfoot
-  %tbody
-
-    - @hackers.each_with_index do |hacker,index|
-      %tr{:class => (index % 2 == 0) ? "odd" : "even"}
-        %td= hacker.twitter
-        %td= link_to 'Show', hacker
-        %td= link_to 'Edit', edit_hacker_path(hacker)
-        %td= link_to('Destroy', hacker_path(hacker), :confirm => "sure?", :method => :delete)
-
-%ul.sub_nav
-  %li.sub_nav_item
-    = link_to 'New Hacker', new_hacker_path
+%footer.footer_content  
+  %ul.sub_nav
+    %li.sub_nav_item
+      = link_to 'New Hacker', new_hacker_path
