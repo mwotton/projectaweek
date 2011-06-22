@@ -22,7 +22,6 @@
         %li.main_nav_list_item= link_to "history", page_path("history")
         %li.main_nav_list_item= link_to "twitter", page_path("twitter")
 
-    %article.main_content= yield
     
     // Grab Google CDN's jQuery. fall back to local if necessary
     %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.js", :type => "text/javascript"}
@@ -33,3 +32,4 @@
 
     %script{:src => "/javascripts/plugins/jquery.countdown.min.js", :type => "text/javascript"}
 
+    = yield
