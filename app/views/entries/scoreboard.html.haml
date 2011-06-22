@@ -40,3 +40,36 @@
     = link_to "start submitting entries.", :action => :new, :controller =>:entries
     %br
     There is precisely no security on this at the moment, so try to resist the urge to prank.
+
+%script{:src => "/javascripts/plugins/jquery.countdown.min.js", :type => "text/javascript"}
+= @rounds.last.deadline
+:javascript
+  var countUtcTime = (" #{@rounds.last.deadline} ").replace(/-/g,",").replace(/:/g,",").replace(/[A-Z]/g,"").replace(/\s/g,""),
+  //var countUtcTime = (" #{@rounds.last.deadline} "),
+      countUtcTimeSplice1 = countUtcTime.slice(0, 10),
+      countUtcTimeSplice2 = countUtcTime.slice(10),
+      countUtcTimeSplitGlue = countUtcTimeSplice1 + "," + countUtcTimeSplice2,
+      countUtcDate = new Date(#{@rounds.last.deadline}  ),
+      countUtcNewDate = new Date,
+      countNow = countUtcNewDate.getTime();
+  console.log(countUtcTime);
+  console.log("UTC: " + countUtcDate + " - " + countNow + " = " + Math.ceil(countUtcDate - countNow)+"\n" +  Math.ceil(countUtcDate - countNow)/1000);
+  
+  
+  $('#countDownToScore')
+    .countdown({
+      until: '', /* needs to be changed to %next_score_date */
+      compact: true, 
+      layout: '<div class="still_time">{dn} {dl} {hnn}{sep}{mnn}{sep}{snn}</div>', 
+      description: 'til ... <em>Mark!?</em>'
+    })
+    .addClass('count_down_to_score');
+  
+  
+  
+  
+  
+  
+  
+  
+  
