@@ -7,29 +7,27 @@
     %link{:rel => "stylesheet", :href => "/stylesheets/scaffold.css", :type => "text/css", :media => "all"}
     // Grab Google CDN's jQuery. fall back to local if necessary
     %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.js", :type => "text/javascript"}
-    :javascript
-      !window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libraries/jquery.min.js"%3E%3C/script%3E'))
+    %script{:type => "text/javascript"}
+      !window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libraries/jquery.min.js"%3E%3C/script%3E'));
     
     %script{:src => "/javascripts/views/layouts/application.js", :type => "text/javascript"}
   %body
+  
+    /main navigation
     %nav.main_nav
       %ul.main_nav_list
-        %li.main_nav_list_item= link_to "scoreboard", :controller => "/entries", :action => "scoreboard"
-        %li.main_nav_list_item= link_to "new account", new_hacker_path
-        %li.main_nav_list_item= link_to "new entry", new_entry_path
-        %li.main_nav_list_item= link_to "entries", entries_path
-        %li.main_nav_list_item= link_to "hackers", hackers_path
-        %li.main_nav_list_item= link_to "history", page_path("history")
-        %li.main_nav_list_item= link_to "twitter", page_path("twitter")
-
-    %article.main_content= yield
+        %li.main_nav_list_item>= link_to "scoreboard", :controller => "/entries", :action => "scoreboard"
+        %li.main_nav_list_item>= link_to "new account", new_hacker_path 
+        %li.main_nav_list_item>= link_to "new entry", new_entry_path
+        %li.main_nav_list_item>= link_to "entries", entries_path
+        %li.main_nav_list_item>= link_to "hackers", hackers_path
+        %li.main_nav_list_item>= link_to "history", page_path("history")
+        %li.main_nav_list_item.last>= link_to "twitter", page_path("twitter")
+    //main navigation
     
-    // Grab Google CDN's jQuery. fall back to local if necessary
-    %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.js", :type => "text/javascript"}
-    :javascript
-      !window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libraries/jquery.min.js"%3E%3C/script%3E'))
-
-    %script{:src => "/javascripts/views/layouts/application.js", :type => "text/javascript"}
+    /main content
+    = yield
+    //main content
 
     %script{:src => "/javascripts/plugins/jquery.countdown.min.js", :type => "text/javascript"}
 
