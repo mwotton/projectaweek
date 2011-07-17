@@ -132,8 +132,15 @@ p {
 .main_nav_list_item a,
 .main_content,
 .footer_content {
+  -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
+}
+.main_nav,
+.main_nav_list_item a {
+  -webkit-border-radius: 0px 0px 6px 6px;
+  -moz-border-radius: 0px 0px 6px 6px;
+  border-radius: 0px 0px 6px 6px;
 }
 
 /* **
@@ -225,13 +232,13 @@ p {
 
 td.count_down_to_score {
   font: 1.533em/1.5em Monofett, Ubuntu, sans-serif;
-  color: orange;
+  color: #FF0400;
   padding: 0;
   border: 1px dashed;
   border-bottom: none;
 }
 .count_down_to_score .still_time {
-  text-align: center
+  text-align: center;
 }
 .noscore_bench {
   padding: .25em 0 1em;
