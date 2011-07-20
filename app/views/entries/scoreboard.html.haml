@@ -1,5 +1,5 @@
 %article.main_content
-  %h1 Project-A-Week Scoreboard Of DOOM
+  %h1 Scoreboard Of DOOM
   .scoreboard_wrapper
     %table.main_content_table.scoreboard
       %thead
@@ -44,6 +44,7 @@
 %script{:src => "/javascripts/plugins/jquery.countdown.min.js", :type => "text/javascript"}
 = @rounds.last.deadline
 :javascript
+  /*
   var countUtcTime = (" #{@rounds.last.deadline} ").replace(/-/g,",").replace(/:/g,",").replace(/[A-Z]/g,"").replace(/\s/g,""),
   //var countUtcTime = (" #{@rounds.last.deadline} "),
       countUtcTimeSplice1 = countUtcTime.slice(0, 10),
@@ -58,12 +59,13 @@
   
   $('#countDownToScore')
     .countdown({
-      until: '', /* needs to be changed to %next_score_date */
+      until: '', // needs to be changed to %next_score_date
       compact: true, 
       layout: '<div class="still_time">{dn} {dl} {hnn}{sep}{mnn}{sep}{snn}</div>', 
       description: 'til ... <em>Mark!?</em>'
     })
     .addClass('count_down_to_score');
+  //*/
   
   
   
