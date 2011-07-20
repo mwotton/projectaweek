@@ -103,8 +103,8 @@ textarea { overflow: auto; }
 
 body {
   margin: 0 auto;
-  background: url('/images/haem_24.png') repeat #444; /* or 00ff99, 444, aaa, 9cff00, 005980, 00b4ff */
-  background-color: rgba(0,0,0,.67);
+  background: url('/images/haem_24.png') repeat #444; /* or colors 00ff99, 444, aaa, 9cff00, 005980, 00b4ff; IE7 shorthand */
+  background: url('/images/haem_24.png') repeat  rgba(0,0,0,.67); /* modern browsers shorthand */
 }
 h1 {
   font: 4em/1em 'Cabin Sketch', sans-serif;
@@ -134,10 +134,21 @@ p {
   -moz-border-radius: 6px;
   border-radius: 6px;
 }
+.logo,
+.main_nav_list,
 .main_nav_list_item a {
   -webkit-border-radius: 0px 0px 6px 6px;
   -moz-border-radius: 0px 0px 6px 6px;
   border-radius: 0px 0px 6px 6px;
+}
+.logo {
+  margin: 0 0 .667em 2.167em;
+  padding: .25em .5em;
+  font: bold 1.846em/1.2em 'Ubuntu', sans-serif;
+  text-shadow: 1px 1px grey;
+  color: orange;
+  background: white;
+  display: inline-block;
 }
 
 /* **
@@ -147,6 +158,8 @@ p {
   margin: 0 0 1.625em 0;
   font-size: 1.231em; /* = 16px */
   padding: 0 3.25em;
+  display: inline-block;
+  vertical-align: top;
 }
 .sub_nav {
   margin: 0;
@@ -181,15 +194,20 @@ p {
 * content and wrapper elements
 */
 .main_content,
-.footer_content {
+.footer_content,
+.twitter {
   margin: 0 4em 2em;
-  background: white;
+  background: #fff;
   padding: 1em 1em 2em;
   min-width: 75em;
   max-width: 98em;
 }
 .footer_content {
   padding-bottom: 1em;
+}
+.twitter {
+  background:transparent;
+  padding: 0;
 }
 .main_content_table {
   margin-bottom: 3em;
@@ -198,7 +216,7 @@ p {
 }
 
 .main_content_table .mct_header_t1,
-.main_content_table td {
+.main_content_table tbody td {
   padding: .5em;
 }
 .mct_header_t1 {
