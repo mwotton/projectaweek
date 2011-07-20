@@ -9,11 +9,12 @@
     %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.js", :type => "text/javascript"}
     %script{:type => "text/javascript"}
       !window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libraries/jquery.min.js"%3E%3C/script%3E'));
-    
+    %script{:src => "/javascripts/libraries/modernizr.custom.70011.js", :type => "text/javascript"}
     %script{:src => "/javascripts/views/layouts/application.js", :type => "text/javascript"}
   %body
   
     /main navigation
+    %span.logo Project A Week
     %nav.main_nav
       %ul.main_nav_list
         %li.main_nav_list_item>= link_to "scoreboard", :controller => "/entries", :action => "scoreboard"
@@ -28,6 +29,4 @@
     /main content
     = yield
     //main content
-
-    %script{:src => "/javascripts/plugins/jquery.countdown.min.js", :type => "text/javascript"}
 
