@@ -95,7 +95,7 @@ class EntriesController < ApplicationController
     @hackers = Hacker.includes(:entries).where("entries_count > 0").order("entries_count desc")
     @sidelined = Hacker.where("entries_count=0")
     # fixme take last n? 6,7?
-    @rounds = Round.open_rounds # .limit(6)
+    @rounds = Round.open_rounds.last(6) # .limit(6)
 
 
     @entries = {}
