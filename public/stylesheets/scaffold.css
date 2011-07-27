@@ -141,6 +141,9 @@ p {
   -moz-border-radius: 0px 0px 6px 6px;
   border-radius: 0px 0px 6px 6px;
 }
+.header_wrap {
+  white-space: nowrap;
+}
 .logo {
   margin: 0 0 .667em 2.167em;
   padding: .25em .5em;

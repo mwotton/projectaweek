@@ -13,18 +13,19 @@
     %script{:src => "/javascripts/views/layouts/application.js", :type => "text/javascript"}
   %body
   
-    /main navigation
-    %span.logo Project A Week
-    %nav.main_nav
-      %ul.main_nav_list
-        %li.main_nav_list_item>= link_to "scoreboard", :controller => "/entries", :action => "scoreboard"
-        %li.main_nav_list_item>= link_to "new account", new_hacker_path 
-        %li.main_nav_list_item>= link_to "new entry", new_entry_path
-        %li.main_nav_list_item>= link_to "entries", entries_path
-        %li.main_nav_list_item>= link_to "hackers", hackers_path
-        %li.main_nav_list_item>= link_to "history", page_path("history")
-        %li.main_nav_list_item.last>= link_to "twitter", page_path("twitter")
-    //main navigation
+    %header.header_wrap  
+      %span.logo Project A Week
+      /main navigation
+      %nav.main_nav
+        %ul.main_nav_list
+          %li.main_nav_list_item>= link_to "scoreboard", :controller => "/entries", :action => "scoreboard"
+          %li.main_nav_list_item>= link_to "new account", new_hacker_path 
+          %li.main_nav_list_item>= link_to "new entry", new_entry_path
+          %li.main_nav_list_item>= link_to "entries", entries_path
+          %li.main_nav_list_item>= link_to "hackers", hackers_path
+          %li.main_nav_list_item>= link_to "history", page_path("history")
+          %li.main_nav_list_item.last>= link_to "twitter", page_path("twitter")
+      //main navigation
     
     /main content
     = yield
