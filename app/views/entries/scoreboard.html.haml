@@ -16,7 +16,7 @@
         - @hackers.each_with_index do |hacker,index|
           %tr{:class => (index % 2 == 0) ? "odd" : "even"}
             %td.scoreboard_hacker
-              = link_to hacker.twitter, "http://slashdot.org"
+              = link_to hacker.twitter, "http://twitter.com/" + hacker.twitter
             %td.scoreboard_score
               = hacker.entries_count
             - @rounds.each do |round|
@@ -30,7 +30,7 @@
   
   - unless @sidelined.empty?
     %h2 On the bench with zero entries:
-    %p.noscore_bench= raw @sidelined.map{|x| link_to x.twitter, "http://slashdot.org"}.join(", ")
+    %p.noscore_bench= raw @sidelined.map{|x| link_to x.twitter, "http://twitter.com/" + x.twitter}.join(", ")
 
 %footer.footer_content
   %section
